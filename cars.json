@@ -1,0 +1,182 @@
+[
+  {
+    "name": "Szappantartó",
+    "priceStep": 4,
+    "cars": [
+      {
+        "number": 3,
+        "peopleMin": 18,
+        "peopleMax": 24,
+        "priceMin": 180
+      },
+      {
+        "number": 4,
+        "peopleMin": 24,
+        "peopleMax": 32,
+        "priceMin": 250
+      },
+      {
+        "number": 5,
+        "peopleMin": 30,
+        "peopleMax": 40,
+        "priceMin": 320
+      },
+      {
+        "number": 6,
+        "peopleMin": 36,
+        "peopleMax": 48,
+        "priceMin": 390
+      },
+      {
+        "number": 7,
+        "peopleMin": 42,
+        "peopleMax": 56,
+        "priceMin": 460
+      },
+      {
+        "number": 8,
+        "peopleMin": 48,
+        "peopleMax": 64,
+        "priceMin": 530
+      },
+      {
+        "number": 9,
+        "peopleMin": 54,
+        "peopleMax": 72,
+        "priceMin": 600
+      },
+      {
+        "number": 10,
+        "peopleMin": 60,
+        "peopleMax": 80,
+        "priceMin": 670
+      },
+      {
+        "number": 11,
+        "peopleMin": 66,
+        "peopleMax": 88,
+        "priceMin": 740
+      },
+      {
+        "number": 12,
+        "peopleMin": 72,
+        "peopleMax": 96,
+        "priceMin": 810
+      },
+      {
+        "number": 13,
+        "peopleMin": 78,
+        "peopleMax": 104,
+        "priceMin": 880
+      },
+      {
+        "number": 14,
+        "peopleMin": 84,
+        "peopleMax": 112,
+        "priceMin": 950
+      },
+      {
+        "number": 15,
+        "peopleMin": 90,
+        "peopleMax": 120,
+        "priceMin": 1020
+      },
+      {
+        "number": 16,
+        "peopleMin": 96,
+        "peopleMax": 128,
+        "priceMin": 1090
+      },
+      {
+        "number": 17,
+        "peopleMin": 120,
+        "peopleMax": 136,
+        "priceMin": 1232
+      },
+      {
+        "number": 18,
+        "peopleMin": 126,
+        "peopleMax": 142,
+        "priceMin": 1302
+      },
+      {
+        "number": 19,
+        "peopleMin": 131,
+        "peopleMax": 150,
+        "priceMin": 1368
+      },
+      {
+        "number": 20,
+        "peopleMin": 140,
+        "peopleMax": 160,
+        "priceMin": 1450
+      }
+    ]
+  },
+  {
+    "name": "Fagokart",
+    "priceStep": 5,
+    "cars": [
+      {
+        "number": 3,
+        "peopleMin": 15,
+        "peopleMax": 21,
+        "priceMin": 180
+      },
+      {
+        "number": 4,
+        "peopleMin": 20,
+        "peopleMax": 28,
+        "priceMin": 225
+      },
+      {
+        "number": 5,
+        "peopleMin": 25,
+        "peopleMax": 35,
+        "priceMin": 270
+      },
+      {
+        "number": 6,
+        "peopleMin": 30,
+        "peopleMax": 42,
+        "priceMin": 315
+      },
+      {
+        "number": 7,
+        "peopleMin": 35,
+        "peopleMax": 49,
+        "priceMin": 360
+      },
+      {
+        "number": 8,
+        "peopleMin": 40,
+        "peopleMax": 56,
+        "priceMin": 405
+      },
+      {
+        "number": 9,
+        "peopleMin": 45,
+        "peopleMax": 63,
+        "priceMin": 450
+      },
+      {
+        "number": 10,
+        "peopleMin": 50,
+        "peopleMax": 70,
+        "priceMin": 495
+      },
+      {
+        "number": 11,
+        "peopleMin": 55,
+        "peopleMax": 77,
+        "priceMin": 540
+      },
+      {
+        "number": 12,
+        "peopleMin": 60,
+        "peopleMax": 84,
+        "priceMin": 585
+      }
+    ]
+  }
+]
