@@ -1,56 +1,11 @@
 import {setMenuItems} from "./menuItems";
+import {setDivs} from "./animationOnload";
 
-let lastKnownScrollPosition = 0;
 let navHeight = 0;
-
-let jatek = false;
-let jotudni = false;
-let autok = false;
 
 const navList = [];
 
 let debounced = false;
-
-
-
-function setDivs() {
-    lastKnownScrollPosition = window.scrollY;
-    if (!jatek) {
-        setAnimation('jatek', 200, 'fromTop');
-    }
-    if (!jotudni) {
-        setAnimation('jotudni', 200, 'fromLeft');
-        setAnimation('jotudni', 200, 'fromRight');
-    }
-    if (!autok) {
-        setAnimation('autok', 200, 'fromBottom');
-    }
-}
-
-function setAnimation(divId, deltaPixel, className) {
-    if (lastKnownScrollPosition > document.getElementById(divId).offsetTop + deltaPixel - window.innerHeight) {
-        if (divId === 'jatek') {
-            jatek = true;
-        }
-        if (divId === 'jotudni') {
-            jotudni = true;
-        }
-        if (divId === 'autok') {
-            autok = true;
-        }
-        const cards = document.getElementById(divId).getElementsByClassName(className);
-        let step = 0;
-        const start = setInterval(() => {
-            if (step >= cards.length) {
-                clearInterval(start);
-            } else {
-
-                cards[step].classList.add('inPlace');
-                step++;
-            }
-        }, 200);
-    }
-}
 
 function scroll(e) {
     e.preventDefault();
@@ -146,7 +101,20 @@ function typeChanged(e, inputValue, data) {
     document.getElementById('choosePcs').innerHTML = null; //?
     document.getElementById('choosePcs').innerHTML = cars.join('');
     const carPcs = Array.from(document.querySelectorAll('.carPcs'));
-    carPcs.forEach(carType => carType.addEventListener('click', (e) => PcsChanged(e, inputValue, data)));
+    carPcs.forEach(carType => carType.addEventListener('click', (e) => pcsChanged(e, inputValue, carName, data)));
+}
+
+function pcsChanged(e, inputValue, carName, data) {
+    Array.from(document.querySelectorAll('.carPcs')).map(elem => elem.classList.remove('chosen'));
+    e.srcElement.classList.add('chosen');
+    const carPcs = + e.srcElement.innerHTML;
+    const choosenCar = data.filter(elem => elem.name === carName)[0];
+    const group = choosenCar.cars.filter(element => + element.number === carPcs)[0];
+    const minPrice = group.priceMin;
+    const minPeople = group.peopleMin;
+    const step = choosenCar.priceStep;
+    const price = (inputValue - minPeople) * step + minPrice;
+    console.log(price);
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
