@@ -3,6 +3,9 @@ let lastKnownScrollPosition = 0;
 let jatek = false;
 let jotudni = false;
 let autok = false;
+let arajanlat = false;
+let kapcsolat = false;
+let referenciak = false;
 
 export function setDivs() {
     lastKnownScrollPosition = window.scrollY;
@@ -16,6 +19,16 @@ export function setDivs() {
     if (!autok) {
         setAnimation('autok', 200, 'fromBottom');
     }
+    if (!arajanlat) {
+        setAnimation('arajanlat', 200, 'fromLeft');
+        setAnimation('arajanlat', 200, 'fromRight');
+    }
+    if (!kapcsolat) {
+        setAnimation('kapcsolat', 200, 'fromTop');
+    }
+    if (!referenciak) {
+        setAnimation('referenciak', 200, 'fromBottom');
+    }
 }
 
 export function setAnimation(divId, deltaPixel, className) {
@@ -28,6 +41,15 @@ export function setAnimation(divId, deltaPixel, className) {
         }
         if (divId === 'autok') {
             autok = true;
+        }
+        if (divId === 'arajanlat') {
+            arajanlat = true;
+        }
+        if (divId === 'kapcsolat') {
+            kapcsolat = true;
+        }
+        if (divId === 'referenciak') {
+            referenciak = true;
         }
         const cards = document.getElementById(divId).getElementsByClassName(className);
         let step = 0;
