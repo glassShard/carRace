@@ -34,7 +34,13 @@ function onScroll(navHeight, navList) {
 }
 
 function closeMenu() {
-    document.querySelector('.navbar-toggler').click();
+    const collapsing = document.querySelector('.navbar-collapse');
+    const toggler = document.querySelector('.navbar-toggler');
+    if (collapsing.classList.contains('show')) {
+        toggler.classList.add('collapsed');
+        toggler.setAttribute('aria-expanded', false);
+        collapsing.classList.remove('show');
+    }
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {

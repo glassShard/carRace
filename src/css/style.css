@@ -36,6 +36,10 @@ a:hover {
 	text-decoration: underline;
 }
 
+.titleDiv {
+	margin-top: 30px;
+}
+
 .big-font {
 	font-size: 1.5em;
 }
@@ -225,6 +229,7 @@ input[type=number]::-webkit-outer-spin-button {
 	border: 2px solid #af1d2b;
 	color: #af1d2b;
 	margin: 0 10px;
+	transition: all .2s;
 }
 
 .btn-primary:hover {
@@ -255,7 +260,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .btn-order {
-	margin-top: 40px;
+	margin-top: 20px;
 	margin-bottom: 20px;
 	padding: 20px 80px;
 }
@@ -280,6 +285,7 @@ header {
 	background-position: center center;
 	background-size: cover;
 	color: white;
+	justify-content: center;
 }
 
 .logo {
@@ -461,7 +467,7 @@ footer a:hover {
 }
 
 .overlayLogos {
-	background-color: rgba(175,29,43,0.8);
+	background-color: rgba(175,29,43,0.85);
 	border-radius: 5px;
 	color: white;
 	-webkit-transition: opacity 300ms;
@@ -908,7 +914,7 @@ footer a:hover {
 	}
 
 	.ring {
-		border: 10px solid rgba(256, 256, 256, 0.5);
+		border: 6px solid rgba(256, 256, 256, 0.5);
 	}
 
 	.btn {
