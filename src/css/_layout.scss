@@ -1,0 +1,56 @@
+body {
+  overflow-x: hidden;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  font-weight: 300;
+}
+.fromTop,
+.fromLeft,
+.fromRight,
+.fromBottom {
+  opacity: 0;
+  @include css3-transition(all, .7s, cubic-bezier(.01,.77,.59,1));
+}
+
+.fromTop {
+  @include css3-transform('translateY(-200px)');
+}
+
+.fromLeft {
+  @include css3-transform('translateX(-200px)');
+}
+
+.fromRight {
+  @include css3-transform('translateX(200px)');
+}
+
+.fromBottom {
+  @include css3-transform('translateY(200px)');
+}
+.inPlace {
+  @include css3-transform('translate(0)');
+  @include css3-opacity(1);
+}
+
+.hr-light {
+  border-color: $hr-light-color;
+}
+
+.transparent {
+  @include css3-opacity(0);
+}
+
+a:focus,
+.outline-none:focus {
+  outline: none;
+}
+
+.st-white-background {
+  background-color: $st-white-background;
+}
+
+.circle-img {
+  @include css3-border-radius(50%);
+  width: 100%;
+  height: auto;
+}

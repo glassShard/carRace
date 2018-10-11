@@ -1,0 +1,72 @@
+@include css3-font-face($project-logo-font-1, $project-logo-font-1);
+@include css3-font-face($project-logo-font-2, $project-logo-font-2);
+
+.logo-1 {
+  font-family: $project-logo-font-1;
+}
+
+.logo-2 {
+  font-family: $project-logo-font-2;
+}
+
+.main-title {
+  @media (min-width: $xl-min) {
+    font-size: $main-title-font-xl;
+  }
+  @media (min-width: $lg-min) and (max-width: $lg-max) {
+    font-size: $main-title-font-lg;
+  }
+  @media (min-width: $md-min) and (max-width: $md-max) {
+    font-size: $main-title-font-md;
+  }
+  @media (min-width: $sm-min) and (max-width: $sm-max) {
+    font-size: $main-title-font-sm;
+    line-height: $main-title-font-sm;
+    margin-bottom: 0;
+  }
+  @media (max-width: $xs-max) {
+    font-size: $main-title-font-xs;
+    line-height: $main-title-font-xs;
+    margin-bottom: 0;
+  }
+}
+
+.display-4 {
+  @media (max-width: $sm-max) {
+    font-size: 2.5rem;
+  }
+}
+
+.color-project-color {
+  color: $project-color;
+}
+
+a {
+  color: $project-color;
+}
+
+a:hover {
+  color: $project-color;
+  text-decoration: underline;
+}
+
+.inverse a,
+.inverse a:hover {
+  color: white;
+}
+
+.big-font {
+  font-size: 1.5em;
+
+  @media (min-width: $md-min) and (max-width: $md-max) {
+    font-size: 1.5rem;
+  }
+
+  @media (min-width: $sm-min) and (max-width: $sm-max) {
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: $xs-max) {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,8 @@
+.game {
+  @media (min-width: $sm-min) and (max-width: $sm-max) {
+    max-width: 1000px;
+  }
+  .card-body {
+    background-color: $light-rose-bg;
+  }
+}

@@ -1,0 +1,169 @@
+.calc {
+  @extend %background;
+  @include findBackgroundSize('money');
+  @include css3-prefix('box-shadow', 'inset 0 0 0 1000px rgba(256,256,256,.75)');
+
+  .calcRow {
+    justify-content: space-between;
+    overflow: hidden;
+    margin-top: 10px;
+
+    @media (max-width: $xs-max) {
+      justify-content: space-between;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .calcQuestion {
+      align-items: center;
+      font-size: 1rem;
+      flex: 1;
+      flex-wrap: wrap;
+
+      p {
+        text-align: left;
+
+        @media (min-width: $lg-min) {
+            font-size: 1.7em;
+        }
+
+        @media (min-width: $md-min) and (max-width: $md-max) {
+            font-size: 1.5rem;
+            line-height: 1.2;
+        }
+
+        @media (max-width: $sm-max) {
+            font-size: 1.2rem;
+            line-height: 1.2;
+        }
+      }
+    }
+
+    .calcAnswer {
+      align-items: center;
+      flex: 1;
+      flex-wrap: nowrap;
+
+      @media (max-width: $sm-max) {
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: $xs-max) {
+        justify-content: center;
+      }
+
+      &.people {
+        @media (max-width: $xs-max) {
+          flex-direction: column;
+        }
+      }
+
+      .error-message {
+        @include css3-transition(all, $project-transition, ease-in-out);
+      }
+
+      .calcInput,
+      .calcChoosable,
+      .finalPrice {
+        color: $project-color;
+        border: 2px solid $project-color;
+        border-radius: 44px;
+        text-align: center;
+        text-transform: uppercase;
+        @include css3-transition(all, $project-transition, ease-in-out);
+        font-weight: 400;
+
+        @media (min-width: $lg-min) {
+          font-size: 1.3em;
+          padding: 10px 20px;
+          margin: 10px;
+        }
+
+        @media (min-width: $md-min) and (max-width: $md-max) {
+          font-size: 1.1em;
+          padding: 8px 18px;
+          margin: 5px
+        }
+
+        @media (min-width: $sm-min) and (max-width: $sm-max) {
+          font-size: 1.1rem;
+          padding: 5px 15px;
+          margin: 5px
+        }
+
+        @media (max-width: $xs-max) {
+          font-size: 1.1rem;
+          padding: 5px 15px;
+          margin: 5px
+        }
+      }
+
+      .calcInput {
+        width: 80px;
+        background: $calc-input-bg;
+      }
+
+      .finalPrice {
+        width: auto;
+        padding: 10px 20px;
+        text-transform: none;
+      }
+
+      .calcChoosable {
+        cursor: pointer;
+
+        &:hover {
+          background-color: $project-color;
+          color: white;
+        }
+      }
+
+      .chosen,
+      .chosen:hover,
+      .finalPrice {
+        background-color: $calc-ok-color;
+        color: white;
+        border: 2px solid $calc-ok-color;
+      }
+    }
+
+    &.types,
+    &.pieces,
+    &.price {
+      @include css3-transition(all, $project-transition, ease-in-out);
+      max-height: 0;
+    }
+
+    &.types {
+      @media (max-width: $sm-max) {
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  .btn-order {
+    @media (min-width: $lg-min) {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding: 20px 80px;
+    }
+
+    @media (min-width: $md-min) and (max-width: $md-max) {
+      margin-top: 30px;
+      margin-bottom: 20px;
+      padding: 12px 50px;
+    }
+
+    @media (min-width: $sm-min) and (max-width: $sm-max) {
+      margin-top: 30px;
+      margin-bottom: 20px;
+      padding: 12px 50px;
+    }
+
+    @media (max-width: $xs-max) {
+      margin-top: 30px;
+      margin-bottom: 20px;
+      padding: 12px 50px;
+    }
+  }
+}

@@ -1,0 +1,412 @@
+
+.header {
+  height: 100vh;
+  min-height: 650px;
+  padding-top: $navbar-height;
+
+  @media (min-width: $xl-min) {
+    min-height: 670px;
+  }
+
+  @media (max-width: $sm-max) {
+    min-height: 576px;
+  }
+
+  .jumbotron {
+    @extend %background;
+    color: white;
+    justify-content: space-evenly;
+    padding: $jumbotron-padding;
+
+    @include findBackgroundSize('intro');
+
+    .title-div {
+      .logo {
+        @media (min-width: $lg-min) {
+          width: $intro-logo-size-lg;
+          height: $intro-logo-size-lg;
+          margin: $intro-logo-margin-lg;
+        }
+
+        @media (max-width: $md-max) {
+          width: $intro-logo-size-md;
+          height: $intro-logo-size-md;
+          margin: $intro-logo-margin-md;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .jigsaw-div {
+      @media (max-width: $sm-max) {
+        margin-top: 15px;
+      }
+
+      .jigsaw-text {
+        @media (max-width: $sm-max) {
+          h2 {
+            display: inline-block;
+          }
+        }
+        &.right {
+          text-align: right;
+
+          @media (max-width: $sm-max) {
+            text-align: center;
+          }
+        }
+
+        &.left {
+          text-align: left;
+
+          @media (max-width: $sm-max) {
+            text-align: center;
+          }
+        }
+
+      }
+
+      .jigsaw-holder {
+        position: relative;
+
+        @media (min-width: $xl-min) {
+          width: 340px;
+          height: 340px;
+          margin: 40px;
+        }
+
+        @media (min-width: $lg-min) and (max-width: $lg-max) {
+          width: 300px;
+          height: 300px;
+          margin: 35px;
+        }
+
+        @media (min-width: $md-min) and (max-width: $md-max) {
+          width: 260px;
+          height: 260px;
+          margin: 30px;
+
+        }
+
+        @media (min-width: $sm-min) and (max-width: $sm-max) {
+          width: 200px;
+          height: 200px;
+          margin: 14px;
+
+        }
+
+        @media (max-width: $xs-max) {
+          width: 180px;
+          height: 180px;
+          margin: 10px;
+        }
+
+        img {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+// INTRO ANIMATION & KEYFRAMES
+
+#jigsaw1 {
+  @include css3-animation('fadein1 2s, scale1 2s');
+}
+
+@include css3-keyframes(fadein1);
+
+@keyframes fadein1 {
+  0% {
+    @include css3-opacity(0);
+  }
+  17% {
+    @include css3-opacity(0);
+  }
+  50% {
+    @include css3-opacity(1);
+  }
+  100% {
+    @include css3-opacity(1);
+  }
+}
+
+@include css3-keyframes(scale1);
+
+@keyframes scale1 {
+  0% {
+    @include css3-transform('scale(3, 3)');
+  }
+  17% {
+    @include css3-transform('scale(3, 3)');
+  }
+  50% {
+    @include css3-transform('scale(1, 1)');
+  }
+  100% {
+    @include css3-transform('scale(1, 1)');
+  }
+}
+
+#jigsaw2 {
+  @include css3-animation('fadein2 2s, scale2 2s');
+}
+
+@include css3-keyframes(fadein2);
+
+@keyframes fadein2 {
+  0% {
+    @include css3-opacity(0);
+  }
+  33% {
+    @include css3-opacity(0);
+  }
+  67% {
+    @include css3-opacity(1);
+  }
+  100% {
+    @include css3-opacity(1);
+  }
+}
+
+@include css3-keyframes(scale2);
+
+@keyframes scale2 {
+  0% {
+    @include css3-transform('scale(3, 3)');
+  }
+  33% {
+    @include css3-transform('scale(3, 3)');
+  }
+  67% {
+    @include css3-transform('scale(1, 1)');
+  }
+  100% {
+    @include css3-transform('scale(1, 1)');
+  }
+}
+
+#jigsaw3 {
+  @include css3-animation('fadein3 2s, scale3 2s');
+}
+
+@include css3-keyframes(fadein3);
+
+@keyframes fadein3 {
+  0% {
+    @include css3-opacity(0);
+  }
+  50% {
+    @include css3-opacity(0);
+  }
+  83% {
+    @include css3-opacity(1);
+  }
+  100% {
+    @include css3-opacity(1);
+  }
+}
+
+@include css3-keyframes(scale3);
+
+@keyframes scale3 {
+  0% {
+    @include css3-transform('scale(3, 3)');
+  }
+  50% {
+    @include css3-transform('scale(3, 3)');
+  }
+  83% {
+    @include css3-transform('scale(1, 1)');
+  }
+  100% {
+    @include css3-transform('scale(1, 1)');
+  }
+}
+
+#jigsaw4 {
+  @include css3-animation('fadein4 2s, scale4 2s');
+}
+
+@include css3-keyframes(fadein4);
+
+@keyframes fadein4 {
+  0% {
+    @include css3-opacity(0);
+  }
+  67% {
+    @include css3-opacity(0);
+  }
+  100% {
+    @include css3-opacity(1);
+  }
+}
+
+@include css3-keyframes(scale4);
+
+@keyframes scale4 {
+  0% {
+    @include css3-transform('scale(3, 3)');
+  }
+  67% {
+    @include css3-transform('scale(3, 3)');
+  }
+  100% {
+    @include css3-transform('scale(1, 1)');
+  }
+}
+
+#jigsaw-text-1 {
+  @include css3-animation('fadein11 2.83s, translate1 2.83s');
+}
+
+@include css3-keyframes(fadein11);
+
+@keyframes fadein11 {
+  0% {
+    @include css3-opacity(0);
+  }
+  59% {
+    @include css3-opacity(0);
+  }
+  82% {
+    @include css3-opacity(1);
+  }
+  100% {
+    @include css3-opacity(1);
+  }
+}
+
+@include css3-keyframes(translate1);
+
+@keyframes translate1 {
+  0% {
+    @include css3-transform('translateX(-200px)');
+  }
+  59% {
+    @include css3-transform('translateX(-200px)');
+  }
+  82% {
+    @include css3-transform('translateX(0)');
+  }
+  100% {
+    @include css3-transform('translateX(0)');
+  }
+}
+
+#jigsaw-text-2 {
+  @include css3-animation('fadein22 2.83s, translate2 2.83s');
+}
+
+@include css3-keyframes(fadein22);
+
+@keyframes fadein22 {
+  0% {
+    @include css3-opacity(0);
+  }
+  65% {
+    @include css3-opacity(0);
+  }
+  88% {
+    @include css3-opacity(1);
+  }
+  100% {
+    @include css3-opacity(1);
+  }
+}
+
+@include css3-keyframes(translate2);
+
+@keyframes translate2 {
+  0% {
+    @include css3-transform('translateX(-200px)');
+  }
+  65% {
+    @include css3-transform('translateX(-200px)');
+  }
+  88% {
+    @include css3-transform('translateX(0)');
+  }
+  100% {
+    @include css3-transform('translateX(0)');
+  }
+}
+
+#jigsaw-text-3 {
+  @include css3-animation('fadein33 2.83s, translate3 2.83s');
+}
+
+@include css3-keyframes(fadein33);
+
+@keyframes fadein33 {
+  0% {
+    @include css3-opacity(0);
+  }
+  71% {
+    @include css3-opacity(0);
+  }
+  94% {
+    @include css3-opacity(1);
+  }
+  100% {
+    @include css3-opacity(1);
+  }
+}
+
+@include css3-keyframes(translate3);
+
+@keyframes translate3 {
+  0% {
+    @include css3-transform('translateX(200px)');
+  }
+  71% {
+    @include css3-transform('translateX(200px)');
+  }
+  94% {
+    @include css3-transform('translateX(0)');
+  }
+  100% {
+    @include css3-transform('translateX(0)');
+  }
+}
+
+#jigsaw-text-4 {
+  @include css3-animation('fadein44 2.83s, translate4 2.83s');
+}
+
+@include css3-keyframes(fadein44);
+
+@keyframes fadein44 {
+  0% {
+    @include css3-opacity(0);
+  }
+  76% {
+    @include css3-opacity(0);
+  }
+  100% {
+    @include css3-opacity(1);
+  }
+}
+
+@include css3-keyframes(translate4);
+
+@keyframes translate4 {
+  0% {
+    @include css3-transform('translateX(200px)');
+  }
+  76% {
+    @include css3-transform('translateX(200px)');
+  }
+  100% {
+    @include css3-transform('translateX(0)');
+  }
+}

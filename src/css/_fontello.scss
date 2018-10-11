@@ -1,0 +1,60 @@
+@include css3-font-face($fontello, $fontello);
+
+%fontello {
+  font-family: $fontello;
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+
+  font-variant: normal;
+  text-transform: none;
+
+  line-height: 1em;
+
+  margin-left: .2em;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="fontello-"]:before, [class*=" fontello-"]:before {
+  @extend %fontello;
+}
+
+.fontello-mobile:before {
+  content: '\e800';
+}
+
+.fontello-chat:before {
+  content: '\e802';
+}
+
+.fontello-mail:before {
+  content: '\e803';
+}
+
+.fontello-phone:before {
+  content: '\e804';
+}
+
+.fontello-comment:before {
+  content: '\e811';
+}
+
+.fontello-paper-plane:before {
+  content: '\e81a';
+}
+
+.fontello-mail-1:before {
+  content: '\e822';
+}
+
+.fontello-home:before {
+  content: '\e857';
+}

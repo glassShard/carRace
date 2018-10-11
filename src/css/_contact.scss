@@ -1,0 +1,34 @@
+.contact {
+  background-color: $contact-bg;
+  background-image: url('../img/striped-background-repeatable-equal.svg');
+  color: white;
+  background-repeat: repeat;
+
+  .container {
+    @media (min-width: $sm-min) and (max-width: $sm-max) {
+      max-width: 1000px;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+
+  .icon-holder {
+    width: 100px;
+    height: 100px;
+    @include css3-border-radius(50%);
+    cursor: pointer;
+    background: $project-color;
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    @include css3-transition(all, .3s, ease-in-out);
+  }
+
+  .icon-holder:hover {
+    color: white;
+    background-color: #901823;
+  }
+}

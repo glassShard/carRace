@@ -31,7 +31,7 @@ export function setDivs() {
     }
 }
 
-export function setAnimation(divId, deltaPixel, className) {
+function setAnimation(divId, deltaPixel, className) {
     if (lastKnownScrollPosition > document.getElementById(divId).offsetTop + deltaPixel - window.innerHeight) {
         if (divId === 'jatek') {
             jatek = true;

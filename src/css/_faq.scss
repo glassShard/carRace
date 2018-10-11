@@ -1,0 +1,37 @@
+.faq {
+  background-color: $project-color;
+  background-image: url('../img/striped-background-repeatable-equal.svg');
+  color: white;
+  background-repeat: repeat;
+
+  .list {
+    @media (min-width: $sm-min) {
+      padding: 0 8%;
+    }
+
+    @media (max-width: $xs-max) {
+      padding: 0;
+    }
+
+    .rolling-icon {
+      @media (min-width: $sm-min) {
+        margin: 0;
+      }
+
+      @media (max-width: $xs-max) {
+        margin: 20px 0 15px 0;
+      }
+
+      img {
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+    p {
+      @media (max-width: $xs-max) {
+        text-align: center;
+      }
+    }
+  }
+}

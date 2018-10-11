@@ -1,0 +1,18 @@
+{
+  "name": "autoverseny-csapatepites",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack-dev-server --entry ./src/js/index.js --output-filename ./dist/bundle.js --mode development",
+    "build:prod": "webpack src/js/index.js --output dist/bundle.js --mode production"
+  },
+  "author": "Eva",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
+  }
+}

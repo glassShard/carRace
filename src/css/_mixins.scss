@@ -1,0 +1,171 @@
+%background {
+  background-position: center center;
+  background-size: cover;
+}
+
+@mixin findBackgroundSize($filename) {
+  @media (min-width: $xl-min) {
+    background-image: url('../img/#{$filename}1920.jpg');
+  }
+
+  @media (min-width: $sm-min) and (max-width: $lg-max) {
+    background-image: url('../img/#{$filename}1200.jpg');
+  }
+
+  @media (max-width: $sm-max) {
+    background-image: url('../img/#{$filename}768.jpg');
+  }
+}
+
+// FONT FACE
+@mixin css3-font-face($new-font-name, $new-font-filename) {
+  @font-face {
+    font-family: '#{$new-font-name}';
+    src: url('../fonts/#{$new-font-filename}.eot');
+    src: url('../fonts/#{$new-font-filename}.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/#{$new-font-filename}.woff') format('woff'),
+    url('../fonts/#{$new-font-filename}.ttf') format('truetype'),
+    url('../fonts/#{$new-font-filename}.svg##{$new-font-name}') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+// ADDS A BROWSER PREFIX TO THE PROPERTY
+@mixin css3-prefix($property, $value) {
+  -webkit-#{$property}: #{$value};
+  -khtml-#{$property}: #{$value};
+  -moz-#{$property}: #{$value};
+  -ms-#{$property}: #{$value};
+  -o-#{$property}: #{$value};
+  #{$property}: #{$value};
+}
+
+// BACKGROUND COLOR OPACITY
+//@mixin css3-background-opacity($color: #000, $opacity: 0.85) {
+//  background: $color;
+//  background: rgba($color, $opacity);
+//}
+
+// BORDER RADIUS
+@mixin css3-border-radius($radius: 5px) {
+  -webkit-border-top-left-radius: $radius;
+  -webkit-border-top-right-radius: $radius;
+  -webkit-border-bottom-right-radius: $radius;
+  -webkit-border-bottom-left-radius: $radius;
+  -moz-border-radius-topleft: $radius;
+  -moz-border-radius-topright: $radius;
+  -moz-border-radius-bottomright: $radius;
+  -moz-border-radius-bottomleft: $radius;
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+  border-bottom-left-radius: $radius;
+}
+//@mixin css3-border-radius-separate($topLeftRadius: 5px, $topRightRadius: 5px, $bottomRightRadius: 5px, $bottomLeftRadius: 5px) {
+//  -webkit-border-top-left-radius: $topLeftRadius;
+//  -webkit-border-top-right-radius: $topRightRadius;
+//  -webkit-border-bottom-right-radius: $bottomRightRadius;
+//  -webkit-border-bottom-left-radius: $bottomLeftRadius;
+//  -moz-border-radius-topleft: $topLeftRadius;
+//  -moz-border-radius-topright: $topRightRadius;
+//  -moz-border-radius-bottomright: $bottomRightRadius;
+//  -moz-border-radius-bottomleft: $bottomLeftRadius;
+//  border-top-left-radius: $topLeftRadius;
+//  border-top-right-radius: $topRightRadius;
+//  border-bottom-right-radius: $bottomRightRadius;
+//  border-bottom-left-radius: $bottomLeftRadius;
+//}
+// BOX
+//@mixin css3-box($orient: horizontal, $pack: center, $align: center) {
+//  display: -webkit-box;
+//  display: -moz-box;
+//  display: box;
+//  @include css3-prefix('box-orient', $orient);
+//  @include css3-prefix('box-pack', $pack);
+//  @include css3-prefix('box-align', $align);
+//}
+
+// BOX SHADOW
+@mixin css3-box-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4), $inset: "") {
+  @if ($inset != "") {
+    @include css3-prefix('box-shadow', $inset $x $y $blur $color);
+  } @else {
+    @include css3-prefix('box-shadow', $x $y $blur $color);
+  }
+}
+// BOX SIZING
+//@mixin css3-box-sizing($type: border-box) {
+//  @include css3-prefix('box-sizing', $type);
+//}
+
+// FLEX
+//@mixin css3-flex($value: 1) {
+//  @include css3-prefix('box-flex', $value);
+//}
+
+// OPACITY
+@mixin css3-opacity($opacity: 0.5) {
+  filter: alpha(opacity=($opacity * 100));
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + ($opacity * 100) + ")";
+  @include css3-prefix('opacity', $opacity);
+}
+// OUTLINE RADIUS
+//@mixin css3-outline-radius($radius: 5px) {
+//  @include css3-prefix('outline-radius', $radius);
+//}
+// PLACEHOLDER
+//@mixin css3-placeholder($color: #666666) {
+//  &::-moz-placeholder { color: $color; opacity: 1; }
+//  &:-ms-input-placeholder { color: $color; }
+//  &::-webkit-input-placeholder { color: $color; }
+//}
+// RESIZE
+//@mixin css3-resize($direction: both) {
+//  @include css3-prefix('resize', $direction);
+//}
+// ROTATE
+//@mixin css3-rotate($deg: 0, $m11: 0, $m12: 0, $m21: 0, $m22: 0) {
+//  @include css3-prefix('transform', rotate($deg + deg));
+//  filter: progid:DXImageTransform.Microsoft.Matrix(
+//                  M11=#{$m11}, M12=#{$m12}, M21=#{$m21}, M22=#{$m22}, sizingMethod='auto expand');
+//  zoom: 1;
+//}
+// TEXT SHADOW
+//@mixin css3-text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4)) {
+//  text-shadow: $x $y $blur $color;
+//}
+// TRANSFORM
+@mixin css3-transform($params) {
+  @include css3-prefix('transform', $params);
+}
+// TRANSFORM STYLE
+@mixin css3-transform-style($style: preserve-3d) {
+  @include css3-prefix('transform-style', $style);
+}
+// TRANSITION
+@mixin css3-transition($what: all, $length: 1s, $easing: ease-in-out) {
+  @include css3-prefix('transition', $what $length $easing);
+}
+
+// KEYFRAMES
+@mixin css3-keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+// ANIMATION
+@mixin css3-animation($str) {
+  @include css3-prefix('animation', $str);
+}

@@ -1,0 +1,44 @@
+.references {
+  .ref-2-row {
+    margin: auto;
+  }
+
+  .img-holder {
+    width: 90%;
+
+    @media (min-width: $sm-min) and (max-width: $sm-max) {
+      width: 100%;
+    }
+
+    @media (max-width: $xs-max) {
+      width: 60%;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    .overlayLogos {
+      @include css3-border-radius(5px);
+      @include css3-transition(all, .3s, ease-in-out);
+      background-color: rgba(175, 29, 43, 0.85);
+      color: white;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include css3-opacity(0);
+      line-height: 1;
+
+      &:hover {
+        @include css3-opacity(1);
+      }
+    }
+  }
+}

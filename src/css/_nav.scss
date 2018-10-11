@@ -1,0 +1,47 @@
+.navbar {
+  background-color: $project-color;
+  box-shadow: $project-box-shadow;
+
+  @media (min-width: $lg-min) {
+    height: $navbar-height;
+  }
+
+  @media (max-width: $md-max) {
+    height: unset;
+  }
+
+  & .navbar-toggler {
+    outline: none;
+  }
+
+  & .navbar-nav {
+    & .active > .nav-link,
+    & .show > .nav-link {
+      color: $nav-link-active;
+    }
+
+    .nav-item {
+      @media (max-width: $md-max) {
+        border-top: 1px solid $nav-link-color;
+
+        &:nth-child(1) {
+          border-top: none;
+        }
+      }
+
+      .nav-link {
+        color: $nav-link-color;
+        text-align: center;
+
+        &:hover {
+          color: $nav-link-hover;
+        }
+
+        &.active,
+        &.show {
+          color: $nav-link-active;
+        }
+      }
+    }
+  }
+}

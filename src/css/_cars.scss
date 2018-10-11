@@ -1,0 +1,5 @@
+.cars {
+  @media (min-width: $sm-min) and (max-width: $sm-max) {
+    max-width: 1000px;
+  }
+}

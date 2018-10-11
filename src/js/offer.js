@@ -95,7 +95,7 @@ export function inputChanged(e, data, peopleInterval, changes) {
             <hr />
             <div class="price text-center">
                 <p class="big-font text">Mit tartalmaz ez az ár
-                    <span><button class="btn-primary btn-info" data-toggle="modal"
+                    <span><button class="btn btn-primary btn-info outline-none" data-toggle="modal"
                                   data-target="#priceIncludes">?</button></span>
                 </p>
             </div>
