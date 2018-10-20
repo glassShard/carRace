@@ -18,9 +18,9 @@ export function inputChanged(e, data, peopleInterval, changes) {
     function peopleChanged(data, peopleInterval) {
 
         if (inputValue < peopleInterval[0] || inputValue > peopleInterval[1]) {
-            chooseCarDiv.innerHTML = null;
-            choosePcsDiv.innerHTML = null; //?
-            orderDiv.innerHTML = null;
+            chooseCarDiv.innerHTML = '';
+            choosePcsDiv.innerHTML = ''; //?
+            orderDiv.innerHTML = '';
             pieceDiv.style.cssText = 'max-height: 0';
             typeDiv.style.cssText = 'max-height: 0';
             priceDiv.style.cssText = 'max-height: 0';
@@ -55,8 +55,8 @@ export function inputChanged(e, data, peopleInterval, changes) {
     function typeChanged(e, inputValue, data) {
         Array.from(document.querySelectorAll('.carType')).map(elem => elem.classList.remove('chosen'));
         e.srcElement.classList.add('chosen');
-        choosePcsDiv.innerHTML = null;
-        orderDiv.innerHTML = null;
+        choosePcsDiv.innerHTML = '';
+        orderDiv.innerHTML = '';
         priceDiv.style.maxHeight = 0;
         // document.querySelector('.finalPrice').innerHTML = null;
         const carName = e.srcElement.innerHTML;
@@ -68,7 +68,7 @@ export function inputChanged(e, data, peopleInterval, changes) {
                     `<div class="calcChoosable carPcs">${peopleNumGroup.number}</div>`);
             }
         });
-        choosePcsDiv.innerHTML = null; //?
+        choosePcsDiv.innerHTML = ''; //?
         choosePcsDiv.innerHTML = cars.join('');
         pieceDiv.addEventListener('transitionend', (e) => scrollToWindow(e, section));
         pieceDiv.style.cssText = 'max-height: 1000px';
@@ -120,7 +120,8 @@ export function inputChanged(e, data, peopleInterval, changes) {
         const elementBottom = element.offsetTop + element.offsetHeight;
 
         if (window.scrollY + window.innerHeight < elementBottom) {
-            scrollTo(document.documentElement, elementBottom - window.innerHeight, 200);
+            const element = document.scrollingElement ? document.scrollingElement : document.body;
+            scrollTo(element, elementBottom - window.innerHeight, 200);
         }
     }
 }

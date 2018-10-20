@@ -19,7 +19,8 @@ function scroll(e) {
 
     try {
         const to = document.getElementById(this.hash.slice(1)).offsetTop - navHeight;
-        scrollTo(document.documentElement, to, 500);
+        const element = document.scrollingElement ? document.scrollingElement : document.body;
+        scrollTo(element, to, 500);
     } catch(error) {
         console.warn(`${this.hash.slice(1)} element does not exist`);
     }

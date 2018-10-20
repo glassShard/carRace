@@ -7,7 +7,9 @@ export function scrollTo(element, to, duration) {
     const animateScroll = (() => {
         currentTime += increment;
 
-        element.scrollTop = Math.easeInOutQuad(currentTime, start, change, duration);
+        const math = Math.easeInOutQuad(currentTime, start, change, duration);
+
+        element.scrollTop = math;
 
         if (currentTime < duration) {
             setTimeout(animateScroll, increment);
